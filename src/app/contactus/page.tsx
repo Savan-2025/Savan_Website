@@ -118,7 +118,7 @@ export default function ContactPage() {
             <div className="grid sm:grid-cols-2 gap-8 mb-8">
               <div>
                 <p className="flex items-center font-medium"><Phone className="h-4 w-4 mr-2" /> Phone</p>
-                <p className="text-gray-600 mt-1">9924555520</p>
+                <p className="text-gray-600 mt-1">+91 9924555520</p>
               </div>
               <div>
                 <p className="flex items-center font-medium"><Mail className="h-4 w-4 mr-2" /> Email</p>
@@ -131,21 +131,21 @@ export default function ContactPage() {
                 <p className="flex items-center font-medium"><MapPin className="h-4 w-4 mr-2" /> Address</p>
                 <p className="text-gray-600 mt-1">Sammarth bunglows, opp.vishwam93  ,Angola road , Palanpur,385001</p>
               </div>
-              <div>
+              {/* <div>
                 <p className="flex items-center font-medium"><FaInstagram className="h-4 w-4 mr-2" /> Instagram</p>
                 <p className="text-gray-600 mt-1">ddsdfdsffds</p>
-              </div>
+              </div> */}
             </div>
             {/* Row 3 */}
             <div className="grid sm:grid-cols-2 gap-8">
-              <div>
+              {/* <div>
                 <p className="flex items-center font-medium"><FaFacebookF className="h-4 w-4 mr-2" /> Facebook</p>
                 <p className="text-gray-600 mt-1">fbusername</p>
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
                 <p className="flex items-center font-medium"><FaTwitter className="h-4 w-4 mr-2" /> Twitter</p>
                 <p className="text-gray-600 mt-1">twitterhandle</p>
-              </div>
+              </div> */}
             </div>
           </div>
 

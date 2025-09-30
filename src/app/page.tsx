@@ -278,36 +278,40 @@ export default function HomePage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-5 space-y-3">
-                  <h3 className="text-lg font-semibold">{property.propertyName}</h3>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <MapPin className="h-4 w-4" /> {property.location}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <IndianRupee className="h-4 w-4" /> {formatBudget(property.budget)}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Ruler className="h-4 w-4" /> {property.propertyArea}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Tag className="h-4 w-4" /> {property.category}
-                  </div>
-                  {property.projectId && (
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                        {property.projectId.projectName}
-                      </span>
-                    </div>
-                  )}
-                  <div className="pt-3">
-                    <Link
-                      href="/enquirenow"
-                      className="inline-flex items-center justify-center w-full rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-5 py-2 text-white font-semibold shadow-md hover:scale-105 transition-transform"
-                    >
-                      Enquire now
-                    </Link>
-                  </div>
-                </div>
+              <div className="p-5 space-y-3">
+  <h3 className="text-lg font-semibold">{property.propertyName}</h3>
+
+  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+    <MapPin className="h-4 w-4" /> {property.location}
+  </div>
+  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+    <IndianRupee className="h-4 w-4" /> {formatBudget(property.budget)}
+  </div>
+  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+    <Ruler className="h-4 w-4" /> {property.propertyArea}
+  </div>
+  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+    <Tag className="h-4 w-4" /> {property.category}
+  </div>
+
+  {/* Keep space reserved even if projectId is missing */}
+  <div className="flex items-center gap-2 text-sm text-muted-foreground min-h-[24px]">
+    {property.projectId && (
+      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+        {property.projectId.projectName || "N/A"}
+      </span>
+    )}
+  </div>
+
+  <div className="pt-3">
+    <Link
+      href="/enquirenow"
+      className="inline-flex items-center justify-center w-full rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 px-5 py-2 text-white font-semibold shadow-md hover:scale-105 transition-transform"
+    >
+      Enquire now
+    </Link>
+  </div>
+</div>
               </motion.div>
             ))}
           </div>
@@ -366,13 +370,13 @@ export default function HomePage() {
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Tag className="h-4 w-4" /> {property.category}
                   </div>
-                  {property.projectId && (
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                        {property.projectId.projectName}
-                      </span>
-                    </div>
-                  )}
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground min-h-[28px]">
+  {property.projectId?.projectName && (
+    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+      {property.projectId.projectName}
+    </span>
+  )}
+</div>
                   <div className="pt-3">
                     <Link
                       href="/enquirenow"
