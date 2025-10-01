@@ -66,7 +66,7 @@ jobs:
             npm run build
 
             # PM2: restart if exists; otherwise start with PORT=3003
-            if pm2 describe realstate-node-app >/dev/null 2>&1; then
+            if pm2 describe savan-website-app >/dev/null 2>&1; then
               pm2 restart savan-website-app
             else
               PORT=3003 pm2 start npm --name "savan-website-app" -- start
