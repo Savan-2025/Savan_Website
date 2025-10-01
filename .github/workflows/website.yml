@@ -63,6 +63,7 @@ jobs:
 
             # Install deps
             npm install --no-audit --no-fund
+            npm run build
 
             # PM2: restart if exists; otherwise start with PORT=3003
             if pm2 describe realstate-node-app >/dev/null 2>&1; then
