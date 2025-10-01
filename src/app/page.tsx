@@ -201,13 +201,15 @@ export default function HomePage() {
                 >
                   <div className="relative h-56 w-full">
                     <Image
-                      // src={project?.images[0]?.url || "/home.png"}
-                      src={  "https://api.saajra.com/uploads/projects/project-1759214587678-38961031.png"}
-                      // alt={project.projectName}
-                      alt={project.projectName}
-                      fill
-                      className="object-cover"
-                    />
+    src={
+      project.images && project.images.length > 0
+        ? project.images[0].url
+        : "/banner.jpg"
+    }
+    alt={project.projectName || "Project Image"}
+    fill
+    className="object-cover"
+  />
                   </div>
                   <div className="p-5 space-y-2">
                     <h3 className="text-lg font-semibold">{project.projectName}</h3>
